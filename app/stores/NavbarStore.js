@@ -21,6 +21,10 @@ class NavbarStore {
 		}, 1000);
 	}
 
+	onUpdateOnlineUsers(data) {
+		this.onlineUsers = data.onlineUsers;
+	}
+
 	onUpdateAjaxAnimation(className) {
 		this.ajaxAnimationClass = className; //fadeIn or fadeOut
 	}

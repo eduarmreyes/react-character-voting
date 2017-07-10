@@ -26,7 +26,7 @@ class Navbar extends Component {
 		});
 
 		$(document).ajaxComplete(() => {
-			setTimeOut(() => {
+			setTimeout(() => {
 				NavbarActions.updateAjaxAnimation('fadeOut');
 			}, 750);
 		});
