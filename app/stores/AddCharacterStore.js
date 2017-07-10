@@ -17,8 +17,10 @@ class AddCharacterStore {
   }
 
   onAddCharacterFail(errorMessage) {
+  	let errorMsg = errorMessage.responseJSON && errorMessage.responseJSON.message || errorMessage.responseText || errorMessage.statusText;
     this.nameValidationState = 'has-error';
-    this.helpBlock = errorMessage;
+    this.helpBlock = errorMsg;
+		toastr.error(errorMsg);
   }
 
   onUpdateName(event) {

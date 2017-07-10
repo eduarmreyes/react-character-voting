@@ -53,7 +53,7 @@ class AddCharacter extends Component {
                   <div className={ 'form-group ' + this.state.nameValidationState }>
                     <label className='control-label'>Character Name</label>
                     <input type='text' className='form-control' ref='nameTextField' value={ this.state.name } onChange={ AddCharacterActions.updateName } autoFocus/>
-                    <span className='help-block'>{this.state.helpBlock}</span>
+                    <span className='help-block'>{ this.state.helpBlock }</span>
                   </div>
                   <div className={ 'form-group ' + this.state.genderValidationState }>
                     <div className='radio radio-inline'>
