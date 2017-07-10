@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eduarmreyes/react-character-voting"
+    "url": "https://github.com/eduarmreyes/react-character-voting.git"
   },
   "main": "server.js",
   "scripts": {
