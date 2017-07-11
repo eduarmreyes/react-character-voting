@@ -42,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Returns characters statistics.
  */
 app.get('/api/stats', function(req, res, next) {
+  console.log(req);
   async.parallel([
       function(callback) {
         Character.count({}, function(err, count) {
@@ -187,10 +188,10 @@ app.get('/api/characters/:id', function(req, res, next) {
 });
 
 /**
- * GET /api/characters/shame
+ * GET /api/shame
  * Returns 100 lowest ranked characters.
  */
-app.get('/api/characters/shame', function(req, res, next) {
+app.get('/api/shame', function(req, res, next) {
   Character
     .find()
     .sort('-losses')
@@ -202,10 +203,10 @@ app.get('/api/characters/shame', function(req, res, next) {
 });
 
 /**
- * GET /api/characters/top
+ * GET /api/top
  * Return 100 highest ranked characters. Filter by gender, race and bloodline.
  */
-app.get('/api/characters/top', function(req, res, next) {
+app.get('/api/top', function(req, res, next) {
   var params = req.query;
   var conditions = {};
 
@@ -250,10 +251,10 @@ app.get('/api/characters/search', function(req, res, next) {
 });
 
 /**
- * GET /api/characters/count
+ * GET /api/count
  * Returns the total number of characters.
  */
-app.get('/api/characters/count', function(req, res, next) {
+app.get('/api/count', function(req, res, next) {
   Character.count({}, function(err, count) {
     if (err) return next(err);
     res.send({ count: count });
